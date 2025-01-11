@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Wedding Invitation</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="welcome-page">
+      <div class="welcome">
+        <p id="name">Aly & Touqa</p>
+        <p id="date">2.4.2025</p>
+      </div>
+      <p class="start-text">Select a language to begin</p>
+      <div class="lang">
+        <button id="english-button">English</button>
+        <button id="arabic-button">عربي</button>
+      </div>
+    </div>
+
+    <div id="sections-container">
+      <div class="section" id="first-page">
+        <!-- English content -->
+        <div class="english">
+          <h1>
+            <span class="ali slow-motion-left">Aly</span>
+            <span>&</span>
+            <span class="touqa slow-motion-right">Touqa</span>
+          </h1>
+          <p>Are getting married</p>
+        </div>
+        <!-- Arabic content -->
+        <div class="arabic">
+          <h1>
+            <span class="ali slow-motion-left">علي</span>
+            <span>&</span>
+            <span class="touqa slow-motion-right">تقى</span>
+          </h1>
+          <p>سيتم عقد القران</p>
+        </div>
+        <div class="countdown" id="countdown">
+          <div class="countdown-item">
+            <div id="days">0</div>
+            <span>DAY</span>
+          </div>
+          <div><span>:</span></div>
+          <div class="countdown-item">
+            <div id="hours">0</div>
+            <span>HOURS</span>
+          </div>
+          <div><span>:</span></div>
+          <div class="countdown-item">
+            <div id="minutes">0</div>
+            <span>MINUTES</span>
+          </div>
+          <div><span>:</span></div>
+          <div class="countdown-item">
+            <div id="seconds">0</div>
+            <span>SECONDS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="english">
+          <p class="story slow-motion-bottom" id="story-text">
+            Our journey started with a simple meeting that blossomed into a
+            beautiful love story. Join us as we celebrate our union and the
+            beginning of a lifetime together.
+          </p>
+          <h1>
+            <span class="ali">Ali</span>
+            <span>&</span>
+            <span class="touqa">Touqa</span>
+          </h1>
+          <div class="date"><p>Wednesday, April 2, 2025</p></div>
+        </div>
+        <div class="arabic">
+          <p class="story slow-motion-bottom" id="story-text">
+            بدأت رحلتنا بلقاء بسيط تحول إلى قصة حب جميلة. انضموا إلينا للاحتفال
+            باتحادنا وبداية حياتنا معًا.
+          </p>
+          <h1>
+            <span class="ali ">علي</span>
+            <span>&</span>
+            <span class="touqa ">تقى</span>
+          </h1>
+          <div class="date"><p>الأربعاء, 2 أبريل 2025</p></div>
+        </div>
+      </div>
+
+      <div class="section" id="celebrate">
+        <h1 class="celebrate">The Celebration</h1>
+        <div class="clock-section">
+          <i class="fa-solid fa-clock"></i>
+          <div class="time">
+            <div class="clock">4:00 PM</div>
+            <p>(GMT+2), Egypt Time</p>
+          </div>
+        </div>
+        <div class="map">
+          <i class="fa-solid fa-location-dot"></i>
+          <div class="location">
+            <p><span>Fairy Garden</span></p>
+            <p>Giza - Swiss In Plaza Hotel</p>
+          </div>
+        </div>
+        <a href="https://www.google.com/maps" target="_blank">
+          <button>Location Map</button>
+        </a>
+      </div>
+      <div class="section">
+        <h1 class="attendance ">Be Our Guest</h1>
+        <p>Please reply before 15th of February</p>
+
+        <!-- Form for guest response -->
+        <div class="attendance-form">
+          <label for="guest-name">Your Name:</label>
+          <input
+            type="text"
+            id="guest-name"
+            placeholder="Enter your name"
+            required
+          />
+
+          <label for="attendance">Will you be attending?</label>
+          <select id="attendance">
+            <option value="yes">Yes, I'll be there!</option>
+            <option value="no">No, I can't make it.</option>
+          </select>
+
+          <button id="submit-response">Submit</button>
+        </div>
+
+        <!-- Message to be displayed after submitting -->
+        <div
+          id="response-message"
+          class="response-message"
+          style="display: none"
+        >
+          <!-- Message will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

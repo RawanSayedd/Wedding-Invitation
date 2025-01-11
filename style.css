@@ -1,0 +1,313 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: "Arial", sans-serif;
+  background: url("ours.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  flex-direction: column;
+}
+/* Overlay for Low Exposure (applied only to sections) */
+.body::before,
+#sections-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+  z-index: -2; /* Make sure the exposure stays behind content */
+}
+
+/* Container for all sections */
+#sections-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("ours.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory; /* Ensure smooth scrolling between sections */
+}
+
+/* Section Styling */
+.section {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  scroll-snap-align: start;
+  padding: 20px; /* Adjust padding to avoid content being clipped */
+  margin-bottom: 20px; /* Add some margin between sections */
+}
+
+/* Welcome Page Styling */
+#welcome-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("ours.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  overflow: hidden;
+  background-attachment: scroll; /* fallback for mobile browsers */
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.welcome p {
+  font-size: 22px;
+  font-family: "Ysabeau SC", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+/* Typing animation */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Typing animation */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent; /* Remove cursor (border-right) */
+  }
+}
+
+/* Apply typing effect only on name and date */
+#welcome-page #name,
+#welcome-page #date {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #fff; /* Cursor effect */
+}
+
+/* Apply typing effect for the name first */
+#name {
+  animation: typing 3s steps(15) 0s forwards, blink 0.5s step-end 3s infinite; /* Typing + border disappearing after 3s */
+}
+
+/* Initially hide the date */
+#date {
+  display: none; /* Hide date initially */
+}
+
+/* Show and type the date after the name finishes */
+#name.done + #date {
+  display: inline-block; /* Reveal the date */
+  animation: typing 3s steps(7) 0s forwards, blink 0.5s step-end 3s infinite; /* Start typing after name completes */
+}
+
+/* Adding class 'done' to #name after animation ends */
+#name.done {
+  animation: typing 3s steps(15) 0s forwards, blink 0.5s step-end 3s infinite;
+}
+
+/* ************************* */
+/* Heading Styling */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  font-family: "Great Vibes", cursive;
+  line-height: 1.5;
+}
+h1 span {
+  display: block;
+}
+
+.ali {
+  transform: translateX(-70px); /* Shift Ali to the left */
+}
+
+.touqa {
+  transform: translateX(70px); /* Shift Touqa to the right */
+}
+
+p {
+  font-size: 1.2rem;
+  font-family: "Playfair Display", serif;
+}
+
+/* Countdown Timer Styling */
+.countdown {
+  font-size: 2.3rem;
+  margin-top: 10px;
+  font-family: "Playfair Display", serif;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-bottom: 100px;
+}
+.countdown-item span {
+  font-size: 0.7rem;
+  font-family: "Playfair Display", serif;
+}
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.story {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+  line-height: 2.5;
+  padding: 10px;
+}
+
+.section .date p {
+  font-size: 1.5rem;
+}
+
+.clock-section,
+.map {
+  font-size: 1.4rem;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 30px;
+}
+
+.clock-section i,
+.map i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 35px;
+  border: none;
+  outline: #fff solid 1px;
+}
+
+button:hover {
+  background-color: #ccc;
+  transform: scale(1.05);
+}
+
+.lang {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.lang button {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+#celebrate {
+  top: 30px;
+}
+/* Styling for the form */
+.attendance-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.attendance-form input,
+.attendance-form select,
+.attendance-form button {
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.3); /* Faded background */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Slightly faded border */
+  border-radius: 10px; /* Curved borders */
+  color: white;
+  outline: none; /* No outline on focus */
+  transition: background-color 0.3s, font-weight 0.3s; /* Smooth transition for hover effect */
+}
+
+.attendance-form input:focus,
+.attendance-form select:focus,
+.attendance-form button:focus {
+  border-color: rgba(255, 255, 255, 0.7); /* Focused border color */
+}
+
+.attendance-form input:hover,
+.attendance-form select:hover,
+.attendance-form button:hover {
+  background-color: rgba(255, 255, 255, 0.5); /* Faded background on hover */
+  font-weight: bold; /* Make the text bolder on hover */
+}
+
+/* Styling for the response message */
+.response-message {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* For Mobile Screens */
+@media screen and (max-width: 768px) {
+  body {
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  .section {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .arabic {
+    direction: rtl;
+    font-family: "Amiri", serif;
+    display: block;
+  }
+
+  .english {
+    display: block;
+    direction: ltr;
+    font-family: "Arial", sans-serif;
+  }
+}
