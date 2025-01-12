@@ -335,13 +335,44 @@ footer a:hover {
 /* Scroll Hint Styling */
 .scroll-hint {
   position: absolute;
-  bottom: 50px;
-  font-size: 1.6rem;
-  font-weight: bolder;
+  bottom: 150px;
+  font-size: 1.7rem;
+  font-weight: normal;
   animation: bounce 2s infinite;
 }
 .scroll-hint i {
   color: #000;
+}
+/* Scroll Indicator Styling */
+.scroll-indicator {
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+  font-size: 2rem; /* Increase the size */
+  font-weight: bold; /* Make it bold */
+  color: #ccc; /* Use a visible color */
+  background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+  padding: 10px; /* Add some padding */
+  border-radius: 55%; /* Make it circular */
+  cursor: pointer;
+  animation: bounce 1.5s infinite; /* Add a bounce animation */
+  transition: transform 0.2s ease; /* Smooth scaling on hover */
+}
+
+.scroll-indicator:hover {
+  transform: scale(1.2); /* Enlarge slightly on hover */
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes bounce {
