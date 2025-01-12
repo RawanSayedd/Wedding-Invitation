@@ -397,6 +397,25 @@ footer a:hover {
   margin-top: 5px;
   font-size: 0.8rem;
 }
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px; /* Adjust the width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.6); /* Scrollbar color */
+  border-radius: 6px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(200, 200, 200, 0.3); /* Track color */
+  border-radius: 6px; /* Rounded corners for the track */
+}
+
 /* For Mobile Screens */
 @media screen and (max-width: 768px) {
   body {
