@@ -17,30 +17,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleLanguage = (lang) => {
     const englishContent = document.querySelectorAll(".english");
     const arabicContent = document.querySelectorAll(".arabic");
+    currentLanguage = lang;
 
     if (lang === "ar") {
-      currentLanguage = "ar";
       englishContent.forEach((el) => (el.style.display = "none"));
       arabicContent.forEach((el) => (el.style.display = "block"));
+      updateCountdownLanguage(true);
     } else {
-      currentLanguage = "en";
       englishContent.forEach((el) => (el.style.display = "block"));
       arabicContent.forEach((el) => (el.style.display = "none"));
+      updateCountdownLanguage(false);
     }
   };
-
-  // Event listeners for language buttons on the welcome page
-  englishButton.addEventListener("click", () => {
-    toggleLanguage("en");
-    welcomePage.style.display = "none"; // Hide the welcome page
-    scrollToSection(0); // Scroll to the first section
-  });
-
-  arabicButton.addEventListener("click", () => {
-    toggleLanguage("ar");
-    welcomePage.style.display = "none"; // Hide the welcome page
-    scrollToSection(0); // Scroll to the first section
-  });
 
   // Countdown Functionality
   const daysElement = document.getElementById("days");
@@ -49,15 +37,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const secondsElement = document.getElementById("seconds");
   const weddingDate = new Date("2025-04-02T00:00:00");
 
+  function convertToArabicNumbers(number) {
+    const arabicNumbers = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
+    return number
+      .toString()
+      .split("")
+      .map((digit) => arabicNumbers[digit])
+      .join("");
+  }
+
   function updateCountdown() {
     const now = new Date();
     const timeDifference = weddingDate - now;
 
     if (timeDifference <= 0) {
-      daysElement.textContent = "0";
-      hoursElement.textContent = "0";
-      minutesElement.textContent = "0";
-      secondsElement.textContent = "0";
+      daysElement.textContent = currentLanguage === "ar" ? "٠" : "0";
+      hoursElement.textContent = currentLanguage === "ar" ? "٠" : "0";
+      minutesElement.textContent = currentLanguage === "ar" ? "٠" : "0";
+      secondsElement.textContent = currentLanguage === "ar" ? "٠" : "0";
       clearInterval(countdownInterval);
       return;
     }
@@ -71,14 +68,70 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-    daysElement.textContent = days;
-    hoursElement.textContent = hours;
-    minutesElement.textContent = minutes;
-    secondsElement.textContent = seconds;
+    daysElement.textContent =
+      currentLanguage === "ar" ? convertToArabicNumbers(days) : days;
+    hoursElement.textContent =
+      currentLanguage === "ar" ? convertToArabicNumbers(hours) : hours;
+    minutesElement.textContent =
+      currentLanguage === "ar" ? convertToArabicNumbers(minutes) : minutes;
+    secondsElement.textContent =
+      currentLanguage === "ar" ? convertToArabicNumbers(seconds) : seconds;
   }
 
   const countdownInterval = setInterval(updateCountdown, 1000);
   updateCountdown();
+
+  function updateCountdownLanguage(isArabic) {
+    const dayLabel = document.querySelector("#days + span");
+    const hourLabel = document.querySelector("#hours + span");
+    const minuteLabel = document.querySelector("#minutes + span");
+    const secondLabel = document.querySelector("#seconds + span");
+
+    if (isArabic) {
+      dayLabel.textContent = "يوم";
+      hourLabel.textContent = "ساعة";
+      minuteLabel.textContent = "دقيقة";
+      secondLabel.textContent = "ثانية";
+      document.getElementById("countdown").style.direction = "rtl";
+    } else {
+      dayLabel.textContent = "DAY";
+      hourLabel.textContent = "HOURS";
+      minuteLabel.textContent = "MINUTES";
+      secondLabel.textContent = "SECONDS";
+      document.getElementById("countdown").style.direction = "ltr";
+    }
+  }
+
+  // Event listeners for language buttons
+  englishButton.addEventListener("click", () => {
+    toggleLanguage("en");
+    welcomePage.style.display = "none";
+    scrollToSection(0);
+  });
+
+  arabicButton.addEventListener("click", () => {
+    toggleLanguage("ar");
+    welcomePage.style.display = "none";
+    scrollToSection(0);
+  });
+
+  // Add Scroll Indicators
+  function addScrollIndicators() {
+    sections.forEach((section, index) => {
+      if (index < sections.length - 1) {
+        const arrow = document.createElement("div");
+        arrow.classList.add("scroll-indicator");
+        arrow.innerHTML = "&#8595;"; // Down arrow
+        section.appendChild(arrow);
+
+        arrow.addEventListener("click", () => {
+          sections[index + 1].scrollIntoView({ behavior: "smooth" });
+        });
+      }
+    });
+  }
+
+  addScrollIndicators();
 });
 
 // attendance function

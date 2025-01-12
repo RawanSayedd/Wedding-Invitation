@@ -17,6 +17,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Oleo+Script:wght@400;700&family=Satisfy&family=Ysabeau+SC&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="welcome-page">
@@ -49,7 +55,7 @@
             <span>&</span>
             <span class="touqa slow-motion-right">تقى</span>
           </h1>
-          <p>سيتم عقد القران</p>
+          <p>سيتم حفل الزفاف</p>
         </div>
         <div class="countdown" id="countdown">
           <div class="countdown-item">
@@ -72,59 +78,73 @@
             <span>SECONDS</span>
           </div>
         </div>
+        <div class="scroll-hint">
+          <i class="fa-solid fa-arrow-up"></i>
+        </div>
       </div>
 
-      <div class="section">
+      <!--<div class="section section-story">
         <div class="english">
-          <p class="story slow-motion-bottom" id="story-text">
-            Our journey started with a simple meeting that blossomed into a
-            beautiful love story. Join us as we celebrate our union and the
-            beginning of a lifetime together.
+          <p class="story slow-motion-bottom">
+            “With hearts full of love and joy, we invite you to witness the
+            beginning of our forever"
           </p>
           <h1>
-            <span class="ali">Ali</span>
+            <span class="ali">Aly</span>
             <span>&</span>
             <span class="touqa">Touqa</span>
           </h1>
-          <div class="date"><p>Wednesday, April 2, 2025</p></div>
+          <div class="date"><p>Wednesday, 2ⁿᵈ of April, 2025</p></div>
         </div>
         <div class="arabic">
-          <p class="story slow-motion-bottom" id="story-text">
-            بدأت رحلتنا بلقاء بسيط تحول إلى قصة حب جميلة. انضموا إلينا للاحتفال
-            باتحادنا وبداية حياتنا معًا.
-          </p>
+          <p class="story slow-motion-bottom">و ذلك بمشيئة الله</p>
           <h1>
             <span class="ali">علي</span>
             <span>&</span>
             <span class="touqa">تقى</span>
           </h1>
-          <div class="date"><p>الأربعاء, 2 أبريل 2025</p></div>
+          <div class="date">
+            <p>الأربعاء, الثاني من أبريل 2025</p>
+            <br />
+            <p>(ثالث أيام عيد الفطر)</p>
+          </div>
         </div>
-      </div>
+        <div class="scroll-hint">
+          <i class="fa-solid fa-arrow-up"></i>
+        </div>
+      </div>-->
 
       <div class="section" id="celebrate">
         <h1 class="celebrate">The Celebration</h1>
+        <p class="date">Wednesday, 2ⁿᵈ of April, 2025</p>
         <div class="clock-section">
           <i class="fa-solid fa-clock"></i>
           <div class="time">
             <div class="clock">4:00 PM</div>
-            <p>(GMT+2), Egypt Time</p>
+            <p>(GMT+2), Cairo, Egypt</p>
           </div>
         </div>
         <div class="map">
           <i class="fa-solid fa-location-dot"></i>
           <div class="location">
-            <p><span>Fairy Garden</span></p>
-            <p>Giza - Swiss In Plaza Hotel</p>
+            <p><span>Fairy Garden, Lake Venue</span></p>
+            <p>6ᵗʰ of October, Dreamland Golf Resort</p>
+            <p>Giza Egypt</p>
           </div>
         </div>
-        <a href="https://www.google.com/maps" target="_blank">
+        <a
+          href="https://www.google.com/maps?q=X29R+FP5+Fairy+Garden+Lake+Venue,+El+Wahat+Rd,+First+6th+of+October,+Giza+Governorate+3291316,+Egypt&ftid=0x145851002db1e7ad:0x50dd88e42c0bb486&hl=en-US&gl=us&entry=gps&lucs=,94231796,94242478,47071704,47069508,47084304&g_ep=CAISDDYuOTYuMS4zMDU4MBgAINeCAyotLDk0MjMxNzk2LDk0MjQyNDc4LDQ3MDcxNzA0LDQ3MDY5NTA4LDQ3MDg0MzA0QgJCRQ%3D%3D&g_st=iw"
+          target="_blank"
+        >
           <button>Location Map</button>
         </a>
+        <div class="scroll-hint">
+          <i class="fa-solid fa-arrow-up"></i>
+        </div>
       </div>
       <div class="section">
         <h1 class="attendance">Be Our Guest</h1>
-        <p>Please reply before 15th of February</p>
+        <p>Please reply before 26ᵗʰ of February</p>
 
         <!-- Form for guest response -->
         <div class="attendance-form">
@@ -132,16 +152,16 @@
           <input
             type="text"
             id="guest-name"
-            placeholder="Enter your name"
+            placeholder="Please enter your name(s)"
             required
           />
 
-          <label for="attendance">Will you be attending?</label>
+          <label class="will" for="attendance">Will you be attending?</label>
           <select id="attendance">
             <option value="yes">Yes, I'll be there!</option>
             <option value="no">No, I can't make it.</option>
           </select>
-
+          <p class="note"><span>No kids allowed</span></p>
           <button id="submit-response">Submit</button>
         </div>
 
@@ -152,6 +172,9 @@
           style="display: none"
         >
           <!-- Message will be dynamically inserted here -->
+        </div>
+        <div class="scroll-hint">
+          <i class="fa-solid fa-arrow-up"></i>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ body {
   font-family: "Arial", sans-serif;
   background: url("ours.jpg") no-repeat center center fixed;
   background-size: cover;
-  color: #fff;
+  color: #1b1b1b;
   text-align: center;
   display: flex;
   height: 100vh;
@@ -18,17 +18,18 @@ body {
   scroll-behavior: smooth;
   flex-direction: column;
 }
+
 /* Overlay for Low Exposure (applied only to sections) */
 .body::before,
-#sections-container::before {
+.section::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
-  z-index: -2; /* Make sure the exposure stays behind content */
+  background: rgba(0, 0, 0, 0.7); /* Adjust opacity here */
+  z-index: -1; /* Make sure the exposure stays behind content */
 }
 
 /* Container for all sections */
@@ -50,7 +51,7 @@ body {
   height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
   scroll-snap-align: start;
@@ -69,9 +70,10 @@ body {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
+  padding-top: 20px;
   z-index: 10;
   overflow: hidden;
   background-attachment: scroll; /* fallback for mobile browsers */
@@ -150,8 +152,10 @@ body {
 /* Heading Styling */
 h1 {
   font-size: 3rem;
-  margin-bottom: 50px;
-  font-family: "Great Vibes", cursive;
+  margin-bottom: 20px;
+  font-family: "Satisfy", serif;
+  font-weight: 400;
+  font-style: normal;
   line-height: 1.5;
 }
 h1 span {
@@ -174,9 +178,11 @@ p {
 /* Countdown Timer Styling */
 .countdown {
   font-size: 2.3rem;
-  margin-top: 10px;
+  margin-top: 5px;
   font-family: "Playfair Display", serif;
+  font-weight: bolder;
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: space-around;
   margin-bottom: 100px;
@@ -192,13 +198,14 @@ p {
 
 .story {
   font-family: "Times New Roman", Times, serif;
-  font-size: 1.5rem;
-  line-height: 2.5;
-  padding: 10px;
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
 
-.section .date p {
-  font-size: 1.5rem;
+.section .date {
+  font-size: 1.2rem;
+  font-weight: bolder;
+  margin-bottom: 10px;
 }
 
 .clock-section,
@@ -216,10 +223,10 @@ p {
 
 button {
   background-color: transparent;
-  color: #fff;
+  color: #1b1b1b;
   padding: 10px 35px;
   border: none;
-  outline: #fff solid 1px;
+  outline: #1b1b1b solid 1px;
 }
 
 button:hover {
@@ -247,6 +254,7 @@ button:hover {
   align-items: center;
   gap: 10px;
   margin-top: 20px;
+  font-family: "Arial", sans-serif;
 }
 
 .attendance-form input,
@@ -256,23 +264,28 @@ button:hover {
   margin-top: 10px;
   font-size: 1rem;
   background-color: rgba(255, 255, 255, 0.3); /* Faded background */
-  border: 2px solid rgba(255, 255, 255, 0.5); /* Slightly faded border */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Slightly faded border */
   border-radius: 10px; /* Curved borders */
-  color: white;
+  color: #1b1b1b;
   outline: none; /* No outline on focus */
   transition: background-color 0.3s, font-weight 0.3s; /* Smooth transition for hover effect */
+}
+label .will {
+  margin-top: 0;
+  font-size: 15px;
+  font-weight: bolder;
 }
 
 .attendance-form input:focus,
 .attendance-form select:focus,
 .attendance-form button:focus {
-  border-color: rgba(255, 255, 255, 0.7); /* Focused border color */
+  border-color: rgba(71, 102, 73, 0.5); /* Focused border color */
 }
 
 .attendance-form input:hover,
 .attendance-form select:hover,
 .attendance-form button:hover {
-  background-color: rgba(255, 255, 255, 0.5); /* Faded background on hover */
+  background-color: rgba(255, 255, 255, 0.4); /* Faded background on hover */
   font-weight: bold; /* Make the text bolder on hover */
 }
 
@@ -281,40 +294,86 @@ button:hover {
   margin-top: 20px;
   font-size: 1.5rem;
   text-align: center;
-  color: #fff;
+  color: #1b1b1b;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
+.note {
+  font-size: 0.8rem;
+  color: #ccc;
+  border-radius: 10px;
+  background-color: rgb(27, 27, 27, 0.9);
+  padding: 4px;
+}
+
 footer {
   text-align: center;
   padding: 10px;
   position: fixed;
   bottom: 0;
   width: 100%;
-  color: #fff;
+  color: #1b1b1b;
 }
 footer p {
   font-size: 0.8rem;
 }
 footer a {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 footer a {
-  color: #fff;
+  color: #1b1b1b;
   text-decoration: none;
+  font-weight: bolder;
 }
 
 footer a:hover {
   text-decoration: underline;
 }
 
+/* Scroll Hint Styling */
+.scroll-hint {
+  position: absolute;
+  bottom: 50px;
+  font-size: 1.6rem;
+  font-weight: bolder;
+  animation: bounce 2s infinite;
+}
+.scroll-hint i {
+  color: #000;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.countdown.arabic {
+  direction: rtl;
+}
+
+.countdown-item {
+  margin: 0 10px;
+}
+
+.countdown-item span {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.8rem;
+}
 /* For Mobile Screens */
 @media screen and (max-width: 768px) {
   body {
     overflow-y: scroll;
     height: 100vh;
+  }
+  .scroll-hint {
+    font-size: 1.5rem;
   }
 
   .section {
