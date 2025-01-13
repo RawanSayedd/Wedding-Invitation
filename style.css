@@ -353,17 +353,15 @@ button a {
 .bolder {
   font-weight: bolder;
 }
-.note p {
+.note {
   font-size: 0.8rem;
   color: #ccc;
   border-radius: 10px;
   background-color: rgb(27, 27, 27, 0.9);
-  padding: 3px;
+  padding: 6px;
   font-weight: bold;
   margin-top: 20px;
-  width: 140px;
   text-align: center;
-  margin-left: 70px;
   margin-bottom: 20px;
 }
 .arabic .note p {
