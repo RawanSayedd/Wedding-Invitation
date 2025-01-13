@@ -164,6 +164,9 @@ h1 {
   font-weight: 400;
   font-style: italic;
 }
+.arabic h1 {
+  font-size: 2.5rem;
+}
 h1 span {
   display: block;
 }
