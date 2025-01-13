@@ -158,6 +158,11 @@ h1 {
   font-style: normal;
   line-height: 1.5;
 }
+.arabic h1 {
+  font-family: "Rakkas", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 h1 span {
   display: block;
 }
@@ -165,9 +170,21 @@ h1 span {
 .ali {
   transform: translateX(-70px); /* Shift Ali to the left */
 }
+.arabic .ali {
+  transform: translateX(70px);
+  font-family: "Rakkas", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 .touqa {
   transform: translateX(70px); /* Shift Touqa to the right */
+}
+.arabic .touqa {
+  transform: translateX(-70px);
+  font-family: "Rakkas", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 p {
@@ -259,18 +276,21 @@ button:hover {
   margin-top: 20px;
   font-family: "Arial", sans-serif;
 }
+.placeholder {
+  font-size: 10px;
+}
 
 .attendance-form input,
 .attendance-form select,
 .attendance-form button {
-  padding: 10px;
+  padding: 8px;
   margin-top: 10px;
   font-size: 1rem;
   background-color: rgba(255, 255, 255, 0.3); /* Faded background */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Slightly faded border */
-  border-radius: 10px; /* Curved borders */
+  border: 1px solid rgba(255, 255, 255, 0.01); /* Slightly faded border */
+  border-radius: 1px; /* Curved borders */
   color: #1b1b1b;
-  outline: none; /* No outline on focus */
+  outline: 1px solid #333; /* No outline on focus */
   transition: background-color 0.3s, font-weight 0.3s; /* Smooth transition for hover effect */
 }
 label .will {
@@ -297,10 +317,21 @@ label .will {
   margin-top: 20px;
   font-size: 1.5rem;
   text-align: center;
-  color: #1b1b1b;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.1);
+  color: #ccc;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
+}
+/* Smaller placeholder styling */
+.attendance-form input::placeholder {
+  font-size: 0.8rem;
+}
+.bold {
+  font-weight: bolder;
+  text-decoration: underline;
+}
+.bolder {
+  font-weight: bolder;
 }
 .note {
   font-size: 0.8rem;
@@ -308,6 +339,7 @@ label .will {
   border-radius: 10px;
   background-color: rgb(27, 27, 27, 0.9);
   padding: 4px;
+  font-weight: bold;
 }
 
 footer {
@@ -316,7 +348,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  color: #1b1b1b;
+  color: #ccc;
 }
 footer p {
   font-size: 0.8rem;
@@ -326,7 +358,7 @@ footer a {
 }
 
 footer a {
-  color: #1b1b1b;
+  color: #ccc;
   text-decoration: none;
   font-weight: bolder;
 }

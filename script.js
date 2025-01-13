@@ -135,36 +135,65 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // attendance function
-document
-  .getElementById("submit-response")
-  .addEventListener("click", function () {
-    // Get the input values
-    const guestName = document.getElementById("guest-name").value.trim();
-    const attendanceStatus = document.getElementById("attendance").value;
+// Attendance form submission logic
+document.addEventListener("DOMContentLoaded", () => {
+  // Function to handle form submission
+  const handleSubmit = (lang) => {
+    const nameField = document.getElementById(`guest-name-${lang}`);
+    const attendanceField = document.getElementById(`attendance-${lang}`);
+    const responseMessage = document.getElementById(`response-message-${lang}`);
 
-    // Validate if the guest has entered a name
-    if (guestName === "") {
-      alert("Please enter your name.");
+    const guestName = nameField.value.trim();
+    const attendanceStatus = attendanceField.value;
+
+    // Validate input
+    if (!guestName) {
+      alert(lang === "ar" ? "يرجى إدخال اسمك." : "Please enter your name.");
       return;
     }
 
-    // Get the response message container
-    const responseMessage = document.getElementById("response-message");
-
-    // Determine the message based on attendance choice
-    if (attendanceStatus === "yes") {
-      responseMessage.textContent = `I'm glad you can make it, ${guestName}! See you there.`;
-    } else {
-      responseMessage.textContent = `I'm sorry, ${guestName}, you can't make it.`;
-    }
+    // Set response message based on language
+    responseMessage.textContent =
+      lang === "ar"
+        ? attendanceStatus === "yes"
+          ? `سعداء بحضورك يا ${guestName}! `
+          : `عذرًا يا ${guestName}, لن تستطيع الحضور.`
+        : attendanceStatus === "yes"
+        ? `I'm glad you can make it, ${guestName}! See you there.`
+        : `I'm sorry, ${guestName}, you can't make it.`;
 
     // Show the response message
     responseMessage.style.display = "block";
 
-    // Optionally, clear the form after submission
-    document.getElementById("guest-name").value = "";
-    document.getElementById("attendance").value = "yes";
+    // Clear form inputs
+    nameField.value = "";
+    attendanceField.value = "yes";
+  };
+
+  // Attach event listeners for both English and Arabic forms
+  document
+    .getElementById("submit-response-en")
+    .addEventListener("click", () => handleSubmit("en"));
+  document
+    .getElementById("submit-response-ar")
+    .addEventListener("click", () => handleSubmit("ar"));
+
+  // Clear inputs on page reload for both languages
+  window.addEventListener("load", () => {
+    document.querySelectorAll(".attendance-form input").forEach((input) => {
+      input.value = "";
+    });
+    document.querySelectorAll(".attendance-form select").forEach((select) => {
+      select.value = "yes";
+    });
   });
+});
+
+// Clear form inputs on page load
+window.addEventListener("load", () => {
+  document.getElementById("guest-name").value = "";
+  document.getElementById("attendance").value = "yes";
+});
 
 window.onload = () => {
   ScrollReveal().reveal(".slow-motion-left", {
