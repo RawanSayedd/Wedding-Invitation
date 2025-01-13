@@ -221,6 +221,7 @@ p {
   font-size: 1.2rem;
   line-height: 1;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .section .date {
@@ -277,9 +278,6 @@ button:hover {
   margin-top: 20px;
   font-family: "Arial", sans-serif;
 }
-.placeholder {
-  font-size: 10px;
-}
 
 .attendance-form input,
 .attendance-form select,
@@ -326,6 +324,7 @@ label .will {
 /* Smaller placeholder styling */
 .attendance-form input::placeholder {
   font-size: 0.8rem;
+  color: #1b1b1b;
 }
 .bold {
   font-weight: bolder;
