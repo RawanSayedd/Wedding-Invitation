@@ -169,7 +169,6 @@
           </a>
         </div>
       </div>
-      
       <div class="section">
         <!-- English Form -->
         <div class="english">
@@ -177,64 +176,62 @@
           <p>
             Please reply before <span class="bold">26ᵗʰ of February</span>
           </p>
-          <div class="note">          
-            <p><span>No kids allowed</span></p>
+      
+          <!-- Form for guest response -->
+          <div class="attendance-form">
+            <label for="guest-name-en">Your Name:</label>
+            <input
+              type="text"
+              id="guest-name-en"
+              placeholder="Please enter your name(s)"
+              required
+            />
+            <label class="will" for="attendance-en">Will you be attending?</label>
+            <select id="attendance-en">
+              <option value="yes">Yes, I'll be there!</option>
+              <option value="no">No, I can't make it.</option>
+            </select>
+            <p class="note"><span>No kids allowed</span></p>
+            <button id="submit-response-en"><a href="https://forms.gle/6DaDJfRYJxauJR9G6" target="">Submit</a></button>
           </div>
-          <p class="start-text attendance">Select a language to submit</p>
-          <p class="start-text attendance">اختر اللغة</p>
-
-          <div class="lang">
-            <button id="english-button">
-              <a href="https://forms.gle/GvMcoehXaWrgk4sj7" target="_blank">English</a>
-            </button>
-            <button id="arabic-button">
-              <a href="https://forms.gle/wG5xDnqj5qR9eKtp7" target="_blank">عربي</a>
-            </button>          </div>
-          <!-- Embedded Google Form -->
-           <!-- <div class="attendance-form">
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSeNSFiD4gu2Kp1zN8sxwGpgnAlwNkRpPncrKwIl7WO3Tlqeag/viewform?embedded=true"
-        
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-            >
-              Loading…
-            </iframe>
-          </div>  -->
+          <div
+            id="response-message-en"
+            class="response-message"
+            style="display: none"
+          >
+            <!-- Message will be dynamically inserted here -->
+          </div>
         </div>
       
         <!-- Arabic Form -->
         <div class="arabic">
           <h1 class="attendance">يشرفنا حضوركم</h1>
           <p>نرجو الرد قبل يوم <span class="bold">٢٦ من شهر فبراير</span></p>
-          <div class="note">          
-            <p><span>ممنوع اصطحاب الأطفال</span></p>
+      
+          <!-- Form for guest response -->
+          <div class="attendance-form">
+            <label for="guest-name-ar">الأسم:</label>
+            <input
+              type="text"
+              id="guest-name-ar"
+              placeholder="من فضلك ادخل اسمك(اسماءكم)"
+              required
+            />
+            <label class="will" for="attendance-ar">هل يمكنك الحضور؟</label>
+            <select id="attendance-ar">
+              <option value="yes">نعم, سأحضر بالتأكيد</option>
+              <option value="no">للأسف, لا يمكنني الحضور</option>
+            </select>
+            <p class="note"><span>ممنوع اصطحاب الأطفال</span></p>
+            <button id="submit-response-ar"  ><a href="https://forms.gle/K5tzUFzKPLdib8EW9" target="_blank">ارسال</a></button>
           </div>
-          <p class="start-text attendance">Select a language to submit</p>
-          <p class="start-text attendance">اختر اللغة</p>
-
-          <div class="lang">
-            <button id="english-button">
-              <a href="https://forms.gle/GvMcoehXaWrgk4sj7" target="_blank">English</a>
-            </button>
-            <button id="arabic-button">
-              <a href="https://forms.gle/wG5xDnqj5qR9eKtp7" target="_blank">عربي</a>
-            </button>
-                      </div>
-          <!-- Embedded Google Form -->
-          <!-- <div class="attendance-form">
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSeNSFiD4gu2Kp1zN8sxwGpgnAlwNkRpPncrKwIl7WO3Tlqeag/viewform?embedded=true"
-              width="640"
-              height="800"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-            >
-              جاري التحميل...
-            </iframe>
-          </div> -->
+          <div
+            id="response-message-ar"
+            class="response-message"
+            style="display: none"
+          >
+            <!-- Message will be dynamically inserted here -->
+          </div>
         </div>
       </div>
       
