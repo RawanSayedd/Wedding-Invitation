@@ -274,12 +274,28 @@ button:hover {
 }
 /* Styling for the form */
 .attendance-form {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  max-width: 680px;
   gap: 10px;
   margin-top: 20px;
   font-family: "Arial", sans-serif;
+  background-color: transparent;
+}
+.attendance-form iframe {
+  background-color: transparent;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  color: #000;
 }
 
 .attendance-form input,
@@ -336,13 +352,29 @@ label .will {
 .bolder {
   font-weight: bolder;
 }
-.note {
+.note p {
   font-size: 0.8rem;
   color: #ccc;
   border-radius: 10px;
   background-color: rgb(27, 27, 27, 0.9);
-  padding: 4px;
+  padding: 3px;
   font-weight: bold;
+  margin-top: 20px;
+  width: 140px;
+  text-align: center;
+  margin-left: 70px;
+  margin-bottom: 20px;
+}
+.arabic .note p {
+  margin-right: 70px;
+}
+.lang a {
+  text-decoration: none;
+  color: #1b1b1b;
+}
+p.attendance {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
 }
 
 footer {
