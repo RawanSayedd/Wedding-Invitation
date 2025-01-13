@@ -153,16 +153,16 @@ body {
 h1 {
   font-size: 3rem;
   margin-bottom: 20px;
-  font-family: "Satisfy", serif;
+  font-family: "Tangerine", serif;
   font-weight: 400;
   font-style: normal;
   line-height: 1;
 }
 .arabic h1,
 .arabic .rakas {
-  font-family: "Rakkas", serif;
+  font-family: "Amiri", serif;
   font-weight: 400;
-  font-style: normal;
+  font-style: italic;
 }
 h1 span {
   display: block;
@@ -173,9 +173,9 @@ h1 span {
 }
 .arabic .ali {
   transform: translateX(70px);
-  font-family: "Rakkas", serif;
+  font-family: "Amiri", serif;
   font-weight: 400;
-  font-style: normal;
+  font-style: italic;
 }
 
 .touqa {
@@ -183,9 +183,9 @@ h1 span {
 }
 .arabic .touqa {
   transform: translateX(-70px);
-  font-family: "Rakkas", serif;
+  font-family: "Amiri", serif;
   font-weight: 400;
-  font-style: normal;
+  font-style: italic;
 }
 
 p {
@@ -215,11 +215,11 @@ p {
 }
 
 .story {
-  font-family: "Satisfy", serif;
+  font-family: "Playfair Display", serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 1.2rem;
-  line-height: 1;
+  font-size: 0.9rem;
+  line-height: 0.9;
   margin-top: 10px;
   margin-bottom: 10px;
 }
